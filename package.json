@@ -1,0 +1,23 @@
+{
+  "name": "05-buscadorpelisbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kronapsys/buscadorPelisBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kronapsys/buscadorPelisBackend/issues"
+  },
+  "homepage": "https://github.com/Kronapsys/buscadorPelisBackend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
