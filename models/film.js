@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const ObjectId = mongoose.Types.ObjectId;
 
 let filmSchema = mongoose.Schema({
     id:{
