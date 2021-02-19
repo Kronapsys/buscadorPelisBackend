@@ -1,14 +1,31 @@
-class Film{
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-    constructor(id, title, year, description, image, genre, adult){
-        this.id = id;
-        this.title = title;
-        this.year = year;
-        this.description = description;
-        this.image = image;
-        this.genre = genre;
-        this.adult = adult;
+let filmSchema = mongoose.Schema({
+    id:{
+        type: ObjectId,
+        required: true
+    },
+    title:{
+        type: String,
+        required: true
+    },
+    year:{
+        type: Integer,
+        required: false
+    },
+    overview:{
+        type: String,
+        required: false
+    },
+    image:{
+        type: Image,
+        required: false
+    },
+    genre:{
+        type: String,
+        required: false
     }
-}
+});
 
-module.exports = Film;
+module.exports = mongoose.model('film', filmSchema );
