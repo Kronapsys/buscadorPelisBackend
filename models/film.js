@@ -11,7 +11,7 @@ let filmSchema = mongoose.Schema({
         required: true
     },
     year:{
-        type: Integer,
+        type: Number,
         required: false
     },
     overview:{
