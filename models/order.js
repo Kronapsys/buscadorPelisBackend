@@ -8,7 +8,8 @@ let orderSchema = mongoose.Schema({
     },
     rentalDate:{
         type: Date,
-        required: true
+        required: true,
+        default: new Date
     },
     returnDate:{
         type: Date,
