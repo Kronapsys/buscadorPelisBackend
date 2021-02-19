@@ -1,16 +1,39 @@
-class User {
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
-    constructor(name, surname, idUser, dni, email, password, phone, address, payment){
-        this.name = name;
-        this.surname = surname;
-        this.idUser = idUser;
-        this.dni = dni;
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.address = address;
-        this.payment = payment;
+let userSchema = mongoose.Schema({
+    id:{
+        type: ObjectId,
+        required: true
+    },
+    name:{
+        type: String,
+        required: true
+    },
+    surname:{
+        type: String,
+        required: true
+    },
+    dni:{
+        type: String,
+        required: true
+    },
+    email:{
+        type: String,
+        required: true
+    },
+    password:{
+        type: password,
+        required: true,
+    },
+    phone:{
+        type: String,
+        required: true,
+    },
+    address:{
+        type: String,
+        required: true,
     }
-}
-
-module.exports = User;
+});   
+      
+module.exports = mongoose.model('user', userSchema );
