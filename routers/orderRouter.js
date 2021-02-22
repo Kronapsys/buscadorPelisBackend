@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const filmController = require('../controllers/film');
+const orderController = require('../controllers/order');
 
 router.get('/',async (req, res) => {   
     try{
-        res.json(await filmController.indexAll())
+        res.json(await orderController.indexAll())
     } catch (error) {
         return res.sendStatus(500).json({
             message: 'Server Error'
@@ -13,7 +13,7 @@ router.get('/',async (req, res) => {
 
 router.post('/',async (req, res) => {
     try{
-        const id = await filmController.store(req.body);
+        const id = await orderController.store(req.body);
         const status = 'success';
         res.json({status,id});
     } catch( error ){
@@ -26,7 +26,7 @@ router.post('/',async (req, res) => {
 router.put('/:id',async (req,res) => {
     try{
         const id = req.params.id;
-        res.json(await filmController.update(id,req.body));
+        res.json(await orderController.update(id,req.body));
     } catch( error ){
         return res.sendStatus(500).json({
             message: 'Server Error'
@@ -38,7 +38,7 @@ router.delete('/:id',async (req, res) => {
    try{
         const id = req.params.id;
         const status = 'deleted'
-        await filmController.destroy(id);
+        await orderController.destroy(id);
         res.json({status,id});
    } catch( error ) {
     return res.sendStatus(500).json({
