@@ -6,6 +6,14 @@ let orderSchema = mongoose.Schema({
         type: ObjectId,
         required: true
     },
+    userId:{
+        type: ObjectId,
+        required: true,
+    },
+    filmTitle:{
+        type: String,
+        require: true
+    },
     rentalDate:{
         type: Date,
         required: true,
@@ -17,5 +25,5 @@ let orderSchema = mongoose.Schema({
     }
 });
 
-
-module.exports = mongoose.model('order', orderSchema);
+const Order = mongoose.model('Order', orderSchema);
+module.exports = Order;
