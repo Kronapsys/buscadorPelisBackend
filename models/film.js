@@ -28,4 +28,5 @@ let filmSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('film', filmSchema );
+const Film = mongoose.model('Film', filmSchema);
+module.exports = Film;
