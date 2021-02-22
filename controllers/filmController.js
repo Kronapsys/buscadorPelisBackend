@@ -1,54 +1,26 @@
-const filmModel = require('../models/film');
-const filmDatabase = require('../storage/filmDB');
-
-let database = new filmDatabase();
+const Film = require('../models/film');
 
 class filmController{
+
     constructor(){
-
     }
 
-    //CREATE -C- Dar un alta
-    async createFilm(req,res){
-        let body = req.body;
-
-        try{
-            let film = new filmModel(body.id,body.title,body.year,body.description,body.image,body.genre,body.adult);
-            let seteo = await database.set(film);
-            if(seteo){
-                res.send("Bien! hemos guardado");
-            }   
-        }catch {
-            console.log("error!");
-        }
-        return
+    async indexAll() {
+        return Film.find().limit(10);
     }
 
-    //READ -R- Traernos datos
-
-    async bringFilms(req,res){
-        try {
-            let getting = await database.get();
-
-            if(getting){
-                res.send(getting)
-            }
-        }catch (error) {
-            console.log(error)
-        }
+    async store(film) {
+        return Film.create(film);
     }
 
-    //UPDATE -U- Modificar datos
-    async updateFilm(id, film){
-        return;
+    async update(id, film) {    
+        return Film.findByIdAndUpdate(id, film);
     }
-    
 
-    //DELETE -D- Borrar datos
-    async deleteFilm(id){
-        return;
+    async destroy(id) {
+        return Car.findByIdAndRemove(id);
     }
 }
 
-let filmController = new FilmController;
+let filmController = new filmController();
 module.exports = filmController;
