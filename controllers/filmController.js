@@ -18,7 +18,7 @@ class filmController{
     }
 
     async destroy(id) {
-        return Car.findByIdAndRemove(id);
+        return Film.findByIdAndRemove(id);
     }
 }
 

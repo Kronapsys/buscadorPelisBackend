@@ -18,7 +18,7 @@ class userController{
     }
 
     async destroy(id) {
-        return Car.findByIdAndRemove(id);
+        return User.findByIdAndRemove(id);
     }
 }
 
