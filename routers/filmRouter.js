@@ -5,8 +5,8 @@ router.get('/',async (req, res) => {
     try{
         res.json(await filmController.indexAll())
     } catch (error) {
-        return res.sendStatus(500).json({
-            message: 'Server Error'
+        return res.status(500).json({
+            message: error.message
         });
     }
 });
@@ -17,8 +17,8 @@ router.post('/',async (req, res) => {
         const status = 'success';
         res.json({status,id});
     } catch( error ){
-        return res.sendStatus(500).json({
-            message: 'Server Error'
+        return res.status(500).json({
+            message: error.message
         });
     }
 });
@@ -28,8 +28,8 @@ router.put('/:id',async (req,res) => {
         const id = req.params.id;
         res.json(await filmController.update(id,req.body));
     } catch( error ){
-        return res.sendStatus(500).json({
-            message: 'Server Error'
+        return res.status(500).json({
+            message: error.message
         });
     }
 });
@@ -41,8 +41,8 @@ router.delete('/:id',async (req, res) => {
         await filmController.destroy(id);
         res.json({status,id});
    } catch( error ) {
-    return res.sendStatus(500).json({
-        message: 'Server Error'
+    return res.status(500).json({
+        message: error.message
     });   
    }
 

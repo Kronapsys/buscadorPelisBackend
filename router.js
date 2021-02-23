@@ -5,9 +5,9 @@ const orderRouter = require('./routers/orderRouter');
 const userRouter = require('./routers/userRouter');
 
 
-router.use('/film', filmRouter);
-router.use('/order', orderRouter);
-router.use('/user', userRouter);
+router.use('/films', filmRouter);
+router.use('/orders', orderRouter);
+router.use('/users', userRouter);
 
 
 module.exports = router;
