@@ -1,6 +1,7 @@
 const Film = require('../models/film');
+const bcrypt = require('bcryptjs');
 
-class filmController{
+class FilmController{
 
     constructor(){
     }
@@ -10,6 +11,7 @@ class filmController{
     }
 
     async store(film) {
+        user.password = await bcrypt.hash(user.password, 6);
         return Film.create(film);
     }
 
@@ -22,5 +24,5 @@ class filmController{
     }
 }
 
-let filmController = new filmController();
+let filmController = new FilmController();
 module.exports = filmController;
