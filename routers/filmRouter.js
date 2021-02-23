@@ -21,7 +21,7 @@ router.post('/',async (req, res) => {
             message: 'Server Error'
         });
     }
-})
+});
 
 router.put('/:id',async (req,res) => {
     try{
