@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const userController = require('../controllers/user');
+const userController = require('../controllers/userController');
 
 router.get('/',async (req, res) => {   
     try{

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const orderController = require('../controllers/order');
+const orderController = require('../controllers/orderController');
 
 router.get('/',async (req, res) => {   
     try{
