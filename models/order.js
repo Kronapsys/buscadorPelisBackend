@@ -2,16 +2,12 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 
 let orderSchema = mongoose.Schema({
-    id:{
-        type: ObjectId,
-        required: true
-    },
     userId:{
         type: ObjectId,
         required: true,
     },
     filmId:{
-        type: String,
+        type: ObjectId,
         require: true
     },
     rentalDate:{
