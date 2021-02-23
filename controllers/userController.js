@@ -1,6 +1,6 @@
 const User = require('../models/user');
 
-class userController{
+class UserController{
 
     constructor(){
     }
@@ -22,5 +22,5 @@ class userController{
     }
 }
 
-let userController = new userController();
+let userController = new UserController();
 module.exports = userController;

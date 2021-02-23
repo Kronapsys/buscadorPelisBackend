@@ -1,6 +1,6 @@
 const Order = require('../models/order');
 
-class orderController{
+class OrderController{
 
     constructor(){
     }
@@ -22,5 +22,5 @@ class orderController{
     }
 }
 
-let orderController = new orderController();
+let orderController = new OrderController();
 module.exports = orderController;
