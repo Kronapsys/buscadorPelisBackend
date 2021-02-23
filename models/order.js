@@ -10,7 +10,7 @@ let orderSchema = mongoose.Schema({
         type: ObjectId,
         required: true,
     },
-    filmTitle:{
+    filmId:{
         type: String,
         require: true
     },
