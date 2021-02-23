@@ -10,18 +10,6 @@ let filmSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    year:{
-        type: Number,
-        required: false
-    },
-    overview:{
-        type: String,
-        required: false
-    },
-    image:{
-        type: Image,
-        required: false
-    },
     genre:{
         type: String,
         required: false
