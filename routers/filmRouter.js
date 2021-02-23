@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const filmController = require('../controllers/filmController');
 
-router.get('/',async (req, res) => {   
+router.get('/:id',async (req, res) => {   
     try{
-        res.json(await filmController.indexAll())
+        const id = req.params.id;
+        res.json(await filmController.index(id));
     } catch (error) {
         return res.status(500).json({
             message: error.message

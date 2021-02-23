@@ -5,8 +5,8 @@ class UserController{
     constructor(){
     }
 
-    async indexAll() {
-        return User.find().limit(10);
+    async index(id) {
+        return User.findById(id).limit(10);
     }
 
     async store(user) {

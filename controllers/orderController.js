@@ -5,8 +5,8 @@ class OrderController{
     constructor(){
     }
 
-    async indexAll() {
-        return Order.find().limit(10);
+    async index(id) {
+        return Order.findById(id).limit(10);
     }
 
     async store(order) {

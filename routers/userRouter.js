@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const userController = require('../controllers/userController');
 
-router.get('/',async (req, res) => {   
+router.get('/:id',async (req, res) => {   
     try{
-        res.json(await userController.indexAll())
+        const id = req.params.id;
+        res.json(await userController.index(id));
     } catch (error) {
         return res.status(500).json({
             message: error.message

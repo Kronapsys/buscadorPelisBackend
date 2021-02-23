@@ -6,8 +6,8 @@ class FilmController{
     constructor(){
     }
 
-    async indexAll() {
-        return Film.find().limit(10);
+    async index(id) {
+        return Film.findById(id).limit(10);
     }
 
     async store(film) {
