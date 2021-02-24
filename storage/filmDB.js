@@ -1,19 +1,15 @@
 class Storage {
+  state = [];
 
-    state = [];
+  constructor() {}
 
-    constructor(){
+  async set(film) {
+    return this.state.push(film);
+  }
 
-    }
-
-    async set(film){
-        return this.state.push(film);
-    }
-
-    async get(){
-        return this.state;
-    }
-
+  async get() {
+    return this.state;
+  }
 }
 
 module.exports = Storage;

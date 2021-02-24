@@ -1,27 +1,23 @@
-const Film = require('../models/film');
-const bcrypt = require('bcryptjs');
+const Film = require("../models/film");
 
-class FilmController{
+class FilmController {
+  constructor() {}
 
-    constructor(){
-    }
+  async index(id) {
+    return Film.findById(id);
+  }
 
-    async index(id) {
-        return Film.findById(id).limit(10);
-    }
+  async store(film) {
+    return Film.create(film);
+  }
 
-    async store(film) {
-        user.password = await bcrypt.hash(user.password, 6);
-        return Film.create(film);
-    }
+  async update(id, film) {
+    return Film.findByIdAndUpdate(id, film);
+  }
 
-    async update(id, film) {    
-        return Film.findByIdAndUpdate(id, film);
-    }
-
-    async destroy(id) {
-        return Film.findByIdAndRemove(id);
-    }
+  async destroy(id) {
+    return Film.findByIdAndRemove(id);
+  }
 }
 
 let filmController = new FilmController();

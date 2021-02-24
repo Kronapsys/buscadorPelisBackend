@@ -1,25 +1,23 @@
-const Order = require('../models/order');
+const Order = require("../models/order");
 
-class OrderController{
+class OrderController {
+  constructor() {}
 
-    constructor(){
-    }
+  async index(id) {
+    return Order.findById(id);
+  }
 
-    async index(id) {
-        return Order.findById(id).limit(10);
-    }
+  async store(order) {
+    return Order.create(order);
+  }
 
-    async store(order) {
-        return Order.create(order);
-    }
+  async update(id, order) {
+    return Order.findByIdAndUpdate(id, order);
+  }
 
-    async update(id, order) {    
-        return Order.findByIdAndUpdate(id, order);
-    }
-
-    async destroy(id) {
-        return Order.findByIdAndRemove(id);
-    }
+  async destroy(id) {
+    return Order.findByIdAndRemove(id);
+  }
 }
 
 let orderController = new OrderController();
