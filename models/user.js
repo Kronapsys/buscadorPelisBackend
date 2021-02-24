@@ -32,7 +32,6 @@ const toJSONConfig = {
   }
 };
 
-
 userSchema.set('toJSON', toJSONConfig);
 
 const User = mongoose.model("User", userSchema);
