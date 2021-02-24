@@ -5,7 +5,7 @@ class UserController {
   constructor() {}
 
   async index(id) {
-    return User.findById(id).limit(10);
+    return User.findById(id);
   }
 
   async store(user) {
@@ -20,6 +20,7 @@ class UserController {
   async destroy(id) {
     return User.findByIdAndRemove(id);
   }
+
 }
 
 let userController = new UserController();
